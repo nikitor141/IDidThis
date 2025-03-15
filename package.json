@@ -1,0 +1,31 @@
+{
+	"name": "my-template",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"browserslist": "last 2 versions",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@linthtml/linthtml": "^0.8.0",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@vheemstra/vite-plugin-imagemin": "^2.0.0",
+		"autoprefixer": "^10.4.20",
+		"imagemin-mozjpeg": "^10.0.0",
+		"imagemin-pngquant": "^10.0.0",
+		"imagemin-svgo": "^11.0.1",
+		"imagemin-webp": "^8.0.0",
+		"sass": "^1.79.4",
+		"stylelint": "^16.9.0",
+		"stylelint-config-recess-order": "^5.1.1",
+		"stylelint-config-recommended": "^14.0.1",
+		"stylelint-config-recommended-scss": "^14.1.0",
+		"stylelint-scss": "^6.7.0",
+		"vite": "^5.4.8",
+		"vite-plugin-html": "^3.2.2"
+	},
+	"packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+}

@@ -1,0 +1,50 @@
+$colors: (
+	// default: (
+	// 	accent: #27347c,
+	// 	background: #f6f8fc,
+	// 	background-alt: #e5e9f0,
+	// 	background-deep: #e9edf5,
+	// 	border: #d6dae3,
+	// 	danger: #c9302c,
+	// 	primary: #4e63d0,
+	// 	secondary: #5973e8,
+	// 	text: #2c2f3a
+	// ),
+	default:
+		(
+			accent: #5973e8,
+			background: #f0f2f5,
+			background-alt: #e4e7eb,
+			background-deep: #d1d4e1,
+			border: #c0c5ce,
+			danger: #ff6b81,
+			primary: #748ff5,
+			secondary: #6c7c9e,
+			text: #2c3e50
+		),
+	dark: (
+		accent: #748ff5,
+		background: #0c0f1a,
+		background-alt: #141829,
+		background-deep: #1b2233,
+		border: #222738,
+		danger: #ff4757,
+		primary: #5973e8,
+		secondary: #4a5b9a,
+		text: #d1d4e1
+	)
+);
+
+:root {
+	color-scheme: light;
+	@include themeToVars(default);
+
+	@each $theme, $values in $colors {
+		@if $theme == 'dark' {
+			&[data-theme='dark'] {
+				color-scheme: dark;
+				@include themeToVars(dark);
+			}
+		}
+	}
+}

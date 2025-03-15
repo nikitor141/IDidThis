@@ -1,0 +1,33 @@
+//functions and mixins ------------------------------------
+
+@mixin themeToVars($theme) {
+	$theme: map-get($colors, $theme);
+	@each $key, $value in $theme {
+		--color-#{$key}: #{$value};
+	}
+}
+
+@function cl($name, $opacity: false) {
+	@if $opacity {
+		@return color-mix(in srgb, transparent #{100% - $opacity * 100%}, var(--color-#{unquote($name)}));
+	} @else {
+		@return var(--color-#{unquote($name)});
+	}
+}
+
+@function rem($pixels) {
+	@return calc($pixels / 10) + rem;
+}
+
+$devices: (
+	tabletReset: 'width > 1024px',
+	tablet: '1024px >= width',
+	tabletOnly: '1024px >= width > 530px',
+	mobileReset: 'width > 530px',
+	mobile: '530px >= width'
+);
+@mixin adaptive($device) {
+	@media (map.get($devices, $device)) {
+		@content;
+	}
+}
